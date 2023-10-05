@@ -5,9 +5,9 @@ const picElements = document.querySelector(".gallery");
 
 const markup = galleryItems
   .map(({ preview, original, description }) => {
-    return `<li class="gallary__item">
+    return `<li style="margin-top: 60px" "class="gallary__item">
     <a class="gallary__link" href="${original}">
-    <img class="gallary__image" src="${preview}" alt="${description}">
+    <img width="370" class="gallary__image" src="${preview}" alt="${description}">
     </a></li>`;
   })
   .join("");
