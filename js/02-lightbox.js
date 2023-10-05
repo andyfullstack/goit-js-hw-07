@@ -11,7 +11,7 @@ const markup = galleryItems
     </a></li>`;
   })
   .join("");
-// picElements.insertAdjacentHTML("beforebegin", markup);
+
 picElements.innerHTML = markup;
 
 const lightbox = new SimpleLightbox(".gallery a", {
