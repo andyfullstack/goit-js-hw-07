@@ -11,16 +11,20 @@ const markup = galleryItems
     </a></li>`;
   })
   .join("");
-
-picElements.insertAdjacentHTML("beforebegin", markup);
-
-// console.log(galleryItems);
+// picElements.insertAdjacentHTML("beforebegin", markup);
+picElements.innerHTML = markup;
 
 const lightbox = new SimpleLightbox(".gallery a", {
-  captionsData: "alt",
+  captionsData: "description",
+  caption: true,
   captionDelay: 250,
+  captionSpeed: 250,
   close: false,
   enableKeyboard: true,
+  captions: true,
+  captionPosition: "bottom",
+  captionAlign: "center",
+  captionEffect: "fade",
 });
 
 const modalOpen = evt => {
