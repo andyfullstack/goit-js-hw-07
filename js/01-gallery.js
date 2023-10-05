@@ -4,7 +4,7 @@ import { galleryItems } from "./gallery-items.js";
 const picElements = document.querySelector(".gallery");
 const markup = galleryItems
   .map(({ preview, original, description }) => {
-    return `<li style="margin: 10px" class="gallery__item">
+    return `<li style="margin: 10px"  class="gallery__item">
         <a class="gallery__link" href="${original}">
             <img
                 loading="lazy"
