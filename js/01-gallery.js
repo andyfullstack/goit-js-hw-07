@@ -18,6 +18,7 @@ const markup = galleryItems
   })
   .join("");
 picElements.insertAdjacentHTML("beforeend", markup);
+let instance = null;
 
 const modalOpen = evt => {
   evt.preventDefault();
@@ -27,32 +28,26 @@ const modalOpen = evt => {
   const clickedImageAlt = evt.target.getAttribute("alt");
   const clickedImageSrc = evt.target.dataset.source;
 
-  const instance = basicLightbox.create(
+  instance = basicLightbox.create(
     `<img src='${clickedImageSrc}' alt='${clickedImageAlt}'/>`,
     {
-      onShow: instance => {
+      onShow: () => {
         document.addEventListener("keydown", modalClose);
       },
-      onClose: instance => {
+      onClose: () => {
         document.removeEventListener("keydown", modalClose);
-        // instance = null;
-
-        //    instance.element().querySelector("a").onclick = instance.close;
       },
     }
   );
-
   instance.show();
-
-  const modalClose = evt => {
-    if (evt.key !== "Escape") {
-      return;
-    }
-    instance.close();
-  };
 };
 
-document.addEventListener("keydown", modalClose);
+const modalClose = evt => {
+  if (evt.key !== "Escape") return;
+
+  instance.close();
+};
+
 picElements.addEventListener("click", modalOpen);
 
 // let modalIsOpen = false;
