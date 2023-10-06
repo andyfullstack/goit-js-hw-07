@@ -15,14 +15,13 @@ const markup = galleryItems
 picElements.innerHTML = markup;
 
 const lightbox = new SimpleLightbox(".gallery a", {
-  captionsData: "description",
-  caption: true,
-  captionDelay: 250,
+  captionsData: "alt",
+  captionDelay: 300,
   captionSpeed: 250,
   close: false,
-  enableKeyboard: true,
-  captions: true,
   captionPosition: "bottom",
   captionAlign: "center",
   captionEffect: "fade",
+  navText: ["❤️", "💕"],
+  captionType: "type",
 });

@@ -18,7 +18,7 @@ const markup = galleryItems
   })
   .join("");
 picElements.insertAdjacentHTML("beforeend", markup);
-let instance = null;
+let instance;
 
 const modalOpen = evt => {
   evt.preventDefault();
@@ -43,12 +43,33 @@ const modalOpen = evt => {
 };
 
 const modalClose = evt => {
-  if (evt.key !== "Escape") return;
+  if (evt.code !== "Escape") {
+  }
 
   instance.close();
 };
 
 picElements.addEventListener("click", modalOpen);
+
+//
+//
+
+//
+
+//
+
+//
+
+//
+//
+
+//
+//
+//
+
+//
+
+//
 
 // let modalIsOpen = false;
 // let modal;
