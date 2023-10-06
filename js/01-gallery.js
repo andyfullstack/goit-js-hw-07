@@ -43,20 +43,17 @@ const modalOpen = evt => {
   );
 
   instance.show();
-};
 
-const modalClose = evt => {
-  if (evt.key !== "Escape") {
-    console.log(evt);
-    return;
-  }
-  instance.close();
+  const modalClose = evt => {
+    if (evt.key !== "Escape") {
+      return;
+    }
+    instance.close();
+  };
 };
 
 document.addEventListener("keydown", modalClose);
-picElements.addEventListener("click", evt => {
-  modalOpen(evt);
-});
+picElements.addEventListener("click", modalOpen);
 
 // let modalIsOpen = false;
 // let modal;
